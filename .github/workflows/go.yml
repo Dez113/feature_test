@@ -26,6 +26,9 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
     # Prefix for the build-number-<num> tag to make it unique if tracking multiple build numbers
      #   prefix: # optional
+    - name: Init
+      run: go mod init main
+
     - name: Build
       run: go build -v ./...
 
