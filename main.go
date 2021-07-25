@@ -4,6 +4,7 @@ import "fmt"
 
 
 func main(){
-	fmt.Println("Hello_world!")
+	var someVariable = "disfjldkfjsdf"
+	fmt.Println("Hello_world!", someVariable)
 	return
 }
