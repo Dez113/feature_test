@@ -4,8 +4,8 @@ import "fmt"
 
 
 func main(){
-	var someVariable = "disfjldkfjsdf"
-	fmt.Println("Hello_world!", someVariable)
+	someVariable := "disfjldkfjsdf"
+	fmt.Println("Hello_world232323!", someVariable)
 	fmt.Println(foo())
 	return
 }
