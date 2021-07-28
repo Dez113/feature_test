@@ -10,6 +10,6 @@ func main(){
 	return
 }
 
-func foo()str{
-	retrun "Hello from go!"
+func foo() string {
+	return "Hello from go!"
 }
