@@ -1,21 +1,24 @@
-name: Go
+name: Release
 
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ prod ]
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
     - name: Remove old files
       run: |
         go mod init main
         go build -v ./...
         echo $GITHUB_RUN_NUMBER
         echo $GITHUB_RUN_ID
+    - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          branch: pre-release
+          delete-branch: true
+          title: ${{ github.event.inputs.notes }}
+          reviewers: kezlya
