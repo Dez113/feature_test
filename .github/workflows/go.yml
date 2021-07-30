@@ -17,5 +17,5 @@ jobs:
       run: |
         go mod init main
         go build -v ./...
-        echo ${{ GITHUB_RUN_NUMBER}}
-        echo ${{ GITHUB_RUN_ID }}
+        echo $GITHUB_RUN_NUMBER
+        echo $GITHUB_RUN_ID
