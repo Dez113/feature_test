@@ -15,8 +15,3 @@ jobs:
         go build -v ./...
         echo $GITHUB_RUN_NUMBER
         echo $GITHUB_RUN_ID
-    - uses: peter-evans/create-pull-request@v3
-    - name: Create Pull Request
-#      with:
-#        branch: prod
-#        title: ${{ github.event.inputs.notes }}
