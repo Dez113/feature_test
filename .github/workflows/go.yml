@@ -15,10 +15,8 @@ jobs:
         go build -v ./...
         echo $GITHUB_RUN_NUMBER
         echo $GITHUB_RUN_ID
-    - name: Create Pull Request
     - uses: peter-evans/create-pull-request@v3
+    - name: Create Pull Request
       with:
-        branch: pre-release
-        delete-branch: true
+        branch: prod
         title: ${{ github.event.inputs.notes }}
-        reviewers: kezlya
