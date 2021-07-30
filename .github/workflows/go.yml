@@ -16,7 +16,11 @@ jobs:
         echo $GITHUB_RUN_NUMBER
         echo $GITHUB_RUN_ID
     - name: Create Pull Request
+<<<<<<< HEAD
       uses: peter-evans/create-pull-request@v3
+=======
+    - uses: peter-evans/create-pull-request@v3
+>>>>>>> 680644a0f4d99839bfb0f40d0f47af1d1f46cc52
       with:
         branch: pre-release
         delete-branch: true
