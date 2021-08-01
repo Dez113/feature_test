@@ -1,4 +1,4 @@
-name: PR to prod
+name: PR
 
 on:
   pull_request:
@@ -13,6 +13,7 @@ jobs:
         run: |
                echo $GITHUB_RUN_NUMBER
                echo $GITHUB_RUN_ID
+
 
       - name: Bump version and push tag
         id: tag_version
