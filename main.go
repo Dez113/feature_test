@@ -11,6 +11,9 @@ func main(){
 	fmt.Println("Hello_world231231sdsadasdasda23!", someVariable)
 	fmt.Println("Hello_world231231sdsadasdasda23!", someVariable)
 	fmt.Println("Hello_world231231sdsadasdasda23!", someVariable)
+	fmt.Println("Hello_world231231sdsadasdasda23!", someVariable)
+	fmt.Println("Hello_world231231sdsadasdasda23!", someVariable)
+	fmt.Println("Hello_world231231sdsadasdasda23!", someVariable)
 	fmt.Println(foo())
 	return
 }
