@@ -8,8 +8,6 @@ func main(){
 	fmt.Println("Hello_world2asd31231sdsadasdasdsdasdqqq111a23!", someVariable)
 	fmt.Println("Hello_world2asd31231sdsadasdasdsdasdqqq111a23!", someVariable)
 	fmt.Println("Hello_world2asd31231sdsadasdasdsdasdqqq111a23!", someVariable)
-	fmt.Println("Hello_world2asd31231sdsadasdasdsdasdqqq111a23!", someVariable)
-	fmt.Println("Hello_world2asd31231sdsadasdasdsdasdqqq111a23!", someVariable)
 	fmt.Println(foo())
 	return
 }
