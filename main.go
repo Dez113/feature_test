@@ -4,10 +4,8 @@ import "fmt"
 
 
 func main(){
-	someVariable := "disfjldkfjsdf"
-	fmt.Println("Hello_world2asd31231sdsadasdaswwwdsdasdqqq111a23!", someVariable)
-	fmt.Println("Hello_world2asd3yhsdfgsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdffgh1231sdsadasdasdsdasdfswddqqq111a23!", someVariable)
-	fmt.Println("Hello_world2asd31231sdsadasdasdsdasdqqq111a2389076!", someVariable)
+	someVariable := "TESTING"
+	fmt.Println("Hello_world!", someVariable)
 	fmt.Println(foo())
 	return
 }
