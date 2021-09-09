@@ -7,6 +7,7 @@ func main(){
 	someVariable := "TESTING!"
 	fmt.Println("Hello_world!", someVariable)
 	fmt.Println("Hello_world!", someVariable)
+	fmt.Println("Hello_world!", someVariable)
 	fmt.Println(foo())
 	return
 }
