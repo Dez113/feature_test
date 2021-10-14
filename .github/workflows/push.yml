@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: build
+      id: build
       run: go build -v ./...
     - uses: actions/checkout@v2
     - name: Bump version and push tag
