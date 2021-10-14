@@ -19,7 +19,7 @@ jobs:
         WITH_V: true
         DEFAULT_BUMP: patch
     - name: Print variables
-      run: echo "${{job.status}}" |echo "${{jobs.<0>.status}}"
+      run: echo "${{job.status}}" |echo "${{job.status}}"
   slackNotification:
     needs: build
     name: Slack Notification
@@ -31,11 +31,11 @@ jobs:
           env:
             SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
             SLACK_CHANNEL: general
-            SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+            SLACK_COLOR: ${{ job1.status }} # or a specific color like 'good' or '#ff00ff'
             SLACK_ICON: https://github.com/rtCamp.png?size=48
             SLACK_MESSAGE: 'Post Content :rocket:'
             SLACK_TITLE: Post Title
             SLACK_USERNAME: rtCamp
         - name: Print variables
-          run: echo "${{jobs.<0>.status}}"
+          run: echo "${{job1.status}}"
 
