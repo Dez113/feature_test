@@ -18,7 +18,10 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
         DEFAULT_BUMP: patch
+    - name: Print variables
+      run: echo "${{job.status}}"
   slackNotification:
+    needs: build
     name: Slack Notification
     runs-on: ubuntu-latest
     steps:
