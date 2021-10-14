@@ -19,7 +19,7 @@ jobs:
         WITH_V: true
         DEFAULT_BUMP: patch
     - name: Print variables
-      run: echo "${{job.status}}" |echo "${{jobs.build.status}}"
+      run: echo "${{job.status}}" |echo "${{jobs.<build>.status}}"
   slackNotification:
     needs: build
     name: Slack Notification
