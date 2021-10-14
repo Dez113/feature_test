@@ -20,7 +20,7 @@ jobs:
         WITH_V: true
         DEFAULT_BUMP: patch
     - name: Print variables
-      run: echo ${{job.status}} | echo "step status ${{steps.build}}"
+      run: echo ${{job.status}} | echo "step status ${{steps.build.conclusion}}"
     - name: Slack Notification
       if: steps.build.outputs.status != 'success'
       uses: rtCamp/action-slack-notify@v2
