@@ -37,5 +37,5 @@ jobs:
             SLACK_TITLE: Post Title
             SLACK_USERNAME: rtCamp
         - name: Print variables
-          run: echo "${{job.status}}"
+          run: echo "${{jobs.<0>.status}}"
 
