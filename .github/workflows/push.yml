@@ -36,4 +36,6 @@ jobs:
             SLACK_MESSAGE: 'Post Content :rocket:'
             SLACK_TITLE: Post Title
             SLACK_USERNAME: rtCamp
+        - name: Print variables
+          run: echo "${{job.status}}"
 
