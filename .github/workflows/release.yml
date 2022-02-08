@@ -1,0 +1,40 @@
+name: Release to Prod
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.17
+
+#      - name: Mock swager docs
+#        run: mkdir docs &&  echo "package docs" > docs/docs.go
+#
+#      - name: Create test-coverage directory
+#        run: mkdir test_coverage
+#
+#      - name: Build
+#        run: go build -v ./...
+#
+#      - name: Test
+#        run: go test -v ./... -coverprofile ./test_coverage/c.out
+#
+#      - name: Convert coverage to html
+#        run: go tool cover -html=./test_coverage/c.out -o ./test_coverage/index.html
+#
+#      - name: Push test coverage to Firebase preview
+#        uses: FirebaseExtended/action-hosting-deploy@v0
+#        with:
+#          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+#          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+#          expires: 7d
+#          projectId: sigma-sector-327513
+#          target: patient-genie-test-coverage
