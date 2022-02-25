@@ -8,18 +8,29 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: build
+      id: build
+      run: go build -v ./...
     - uses: actions/checkout@v2
-    - name: Print variables
-      run: |
-        echo $GITHUB_RUN_NUMBER
-        echo $GITHUB_RUN_ID
-        echo $GITHUB_JOB
     - name: Bump version and push tag
       id: tag_version
       uses: anothrNick/github-tag-action@1.26.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
-
-
-
+        DEFAULT_BUMP: patch
+    - name: Print variables
+      run: echo ${{job.status}} | echo "step status ${{steps.build.conclusion}}"
+    - name: Slack Notification
+      if: steps.build.conclusion != 'success'
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_CHANNEL: github
+        SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+        SLACK_ICON: https://github.com/rtCamp.png?size=48
+        SLACK_MESSAGE: 'Post Content :rocket:'
+        SLACK_TITLE: Post Title
+        SLACK_USERNAME: rtCamp
+    - name: Print variables
+      run: echo "${{job.status}}"
