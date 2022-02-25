@@ -27,4 +27,4 @@ jobs:
     steps:
       - name: make a tag
         if: github.event.pull_request.merged == true
-        run: .github/workflows/tag
+        run: ./.github/workflows/tag
