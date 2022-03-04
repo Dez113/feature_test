@@ -1,0 +1,22 @@
+name: tagging main
+
+on:
+  workflow_call:
+
+
+jobs:
+  make_tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Print variables
+        run: |
+          echo $GITHUB_RUN_NUMBER 
+          echo $GITHUB_RUN_ID
+
+      - name: Bump version and push tag
+        id: tag_version
+        uses: anothrNick/github-tag-action@1.26.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
