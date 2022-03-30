@@ -16,8 +16,7 @@ jobs:
           go-version: 1.17
       - name: Print variables
         run: |
-          echo ${{ github }} > test
-          cat test
+          echo ${{ toJSON(github) }}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
