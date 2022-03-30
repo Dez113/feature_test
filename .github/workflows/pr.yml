@@ -22,9 +22,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
-  tagging:
-    runs-on: ubuntu-latest
-    steps:
-      - name: make a tag
-        if: github.event.pull_request.merged == true
-        run: ./.github/workflows/tag
