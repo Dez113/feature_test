@@ -10,6 +10,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.17
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
@@ -19,15 +23,6 @@ jobs:
           delete-branch: false
           title: ${{ github.event.inputs.notes }}
           reviewers: dez113
-
-#
-#      - name: Set up Go
-#        uses: actions/setup-go@v2
-#        with:
-#          go-version: 1.17
-
-
-
 #      - name: Mock swager docs
 #        run: mkdir docs &&  echo "package docs" > docs/docs.go
 #
