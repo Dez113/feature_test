@@ -18,6 +18,6 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: prod
-          base: master
+          branch: master
+          base: prod
           title: JUST A TITLE
