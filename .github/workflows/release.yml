@@ -2,7 +2,7 @@ name: Release to Prod
 
 on:
   release:
-    types: [released]
+    types: published
 
 jobs:
   build:
@@ -10,15 +10,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Set up Go
-        uses: actions/setup-go@v2
         with:
-          go-version: 1.17
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+          ref: 'master'
+      - name: pull-request
+        uses: repo-sync/pull-request@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: prod
-          base: master
-          title: JUST A TITLE
-          commit-message: Update report
+          destination_branch: "prod"
+          source_branch: "master"  
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_reviewer: Dez113
+          pr_label: "auto-pr"
+
