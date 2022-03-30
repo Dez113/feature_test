@@ -14,6 +14,15 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: 1.17
+      - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
+        base: prod
+        delete-branch: false
+        title: ${{ github.event.inputs.notes }}
+        reviewers: kezlya()
 
 #      - name: Mock swager docs
 #        run: mkdir docs &&  echo "package docs" > docs/docs.go
