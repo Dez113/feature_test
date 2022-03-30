@@ -13,6 +13,10 @@ func main() {
 	t := time.Now().Unix()
 	s := fmt.Sprintf("%d", t)
 	fmt.Println(s)
+	fmt.Println(s)
+	fmt.Println(s)
+	fmt.Println(s)
+	fmt.Println(s)
 	fmt.Println(s[len(s)-6:])
 }
 
