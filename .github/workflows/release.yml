@@ -21,3 +21,4 @@ jobs:
           branch: master
           base: prod
           title: JUST A TITLE
+          commit-message: Update report
