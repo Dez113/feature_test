@@ -17,6 +17,11 @@ func main() {
 	fmt.Println(s)
 	fmt.Println(s)
 	fmt.Println(s)
+	fmt.Println(s)
+	fmt.Println(s)
+	fmt.Println(s)
+	fmt.Println(s)
+	fmt.Println(s)
 	fmt.Println(s[len(s)-6:])
 }
 
