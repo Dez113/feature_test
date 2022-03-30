@@ -2,7 +2,7 @@ name: Release to Prod
 
 on:
   release:
-    types: [created]
+    types: [released]
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
         base: prod
         delete-branch: false
         title: ${{ github.event.inputs.notes }}
-        reviewers: kezlya()
+        reviewers: dez113
 
 #      - name: Mock swager docs
 #        run: mkdir docs &&  echo "package docs" > docs/docs.go
