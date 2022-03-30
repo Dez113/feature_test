@@ -18,7 +18,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
-        DEFAULT_BUMP: patch
+        DEFAULT_BUMP: none
     - name: Print variables
       run: echo ${{job.status}} | echo "step status ${{steps.build.conclusion}}"
     - name: Slack Notification
