@@ -19,6 +19,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: prod
+          base: master
           delete-branch: false
           title: ${{ github.event.inputs.notes }}
           team-reviewers: dez113
