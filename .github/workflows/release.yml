@@ -18,8 +18,8 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
-          base: prod
+          branch: prod
+          base: master
           delete-branch: false
           title: ${{ github.event.inputs.notes }}
           reviewers: dez113
