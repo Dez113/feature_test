@@ -2,7 +2,7 @@ name: Release to Prod
 
 on:
   release:
-    types: published
+    types: [published]
 
 jobs:
   build:
@@ -10,16 +10,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Get Previous tag
-        id: previoustag
-        uses: "WyriHaximus/github-action-get-previous-tag@v1"
-        with:
-          fallback: 1.0.0 # Optional fallback tag to use when no tag can be found
+#      - name: Get Previous tag
+#        id: previoustag
+#        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+#        with:
+#          fallback: 1.0.0 # Optional fallback tag to use when no tag can be found
 
       - name: Create PR
         uses: repo-sync/pull-request@v2
         with:
-          pr_title: "Pulling ${{ github.ref }} into staging"
+          pr_title: "Pulling ${{ github.event.release.tag_name }} into staging"
           destination_branch: "prod"
           source_branch: "master"
           github_token: ${{ secrets.GITHUB_TOKEN }}
