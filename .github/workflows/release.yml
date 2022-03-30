@@ -20,7 +20,7 @@ jobs:
         uses: repo-sync/pull-request@v2
         with:
           pr_title: "Pulling ${{ github.ref }} into staging"
-          destination_branch: "staging"
+          destination_branch: "prod"
           source_branch: "master"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_reviewer: Dez113
