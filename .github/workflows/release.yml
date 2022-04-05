@@ -15,4 +15,4 @@ jobs:
 
       - uses: EndBug/add-and-commit@v9
         with:
-          commit_message: Bump version to
+          commit_message: Bump version to ${{ github.event.release.tag_name }}
