@@ -1,14 +1,14 @@
 name: Release to Prod
 
 on:
-  release:
-    types: [published]
+  issues:
+    types: [opened]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       - name: bump version from tag
         run: echo 'Hello DevTeam' > version.txt
