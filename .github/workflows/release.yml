@@ -2,23 +2,20 @@ name: Release to Prod
 
 on:
   release:
-    types: [released]
+    types: [published]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up Go
-        uses: actions/setup-go@v2
+      - uses: actions/checkout@v3
         with:
-          go-version: 1.17
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+          repository: ${{ github.event.repository.full_name }}
+          ref: master
+
+      - name: bump version from tag
+        run: echo ${{ github.event.release.tag_name }} > version.txt
+
+      - uses: EndBug/add-and-commit@v9
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: prod
-          base: master
-          title: JUST A TITLE
-          commit-message: Update report
+          message: Bump version to ${{ github.event.release.tag_name }}
